@@ -85,3 +85,11 @@ Answer: 10.128.17.12
 OPTIONS / HTTP/1.1
 Host: Ubuntu1
 ```
+
+
+## Question 7
+Domain name: google.com
+Top-level domain: com
+Subdomain: www
+The IANA *registrar* ID is 292. IANA does not provide "registrant IDs".
+
