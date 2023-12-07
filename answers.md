@@ -1,3 +1,8 @@
+# Answers and Notes
+
+For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1.
+
+
 ## Question 1
 
 jm3017
