@@ -78,3 +78,10 @@ Answer: 8.8.4.4
 12
 ```
 Answer: 10.128.17.12
+
+
+# Question 4
+```
+OPTIONS / HTTP/1.1
+Host: Ubuntu1
+```
