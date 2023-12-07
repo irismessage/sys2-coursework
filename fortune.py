@@ -1,3 +1,4 @@
+import html
 import telnetlib
 
 
@@ -10,5 +11,7 @@ with telnetlib.Telnet("192.168.100.1", port=80) as tn:
         tn.write(line)
     response = tn.read_until(b"</html>")
 
-response = response.decode("utf-8")
-print(response)
+t = response.decode("utf-8")
+t = html.unescape(t)
+t = t.replace("<br>", "\n")
+print(t)
