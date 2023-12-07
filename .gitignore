@@ -1,3 +1,4 @@
 *.bundle
-*.json
+*.pdf
+*.txt
 *.zip
