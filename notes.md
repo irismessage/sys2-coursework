@@ -92,4 +92,5 @@ Domain name: google.com
 Top-level domain: com
 Subdomain: www
 The IANA *registrar* ID is 292. IANA does not provide "registrant IDs".
+The "Registry Domain ID" is 2138514_DOMAIN_COM-VRSN.
 
