@@ -114,7 +114,18 @@ Host: Ubuntu1
 - vnc set up wireshark captures on u1 and u2, filter: smtp
 - ssh to u2
 - mutt, m for new mail, addr `student@192.168.100.1`, y to send
-    - Ubuntu1.local loops back to u2 for some reason
+    - Ubuntu1.local loops back to u2 for some 
+doesn't work
+
+- vnc wireshark u1
+- telnet from windows
+```
+mail from: student@Ubuntu1.local
+rcpt to:student@Ubuntu1.local
+Subject: <sub>
+<content>
+<enter enter>
+```
 
 
 ## Question 7
