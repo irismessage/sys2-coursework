@@ -113,7 +113,8 @@ Host: Ubuntu1
 ## Question 6
 - vnc set up wireshark captures on u1 and u2, filter: smtp
 - ssh to u2
-- mutt, m for new mail, addr `student@Ubuntu1.local`, y to send
+- mutt, m for new mail, addr `student@192.168.100.1`, y to send
+    - Ubuntu1.local loops back to u2 for some reason
 
 
 ## Question 7
