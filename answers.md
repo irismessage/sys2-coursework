@@ -110,6 +110,12 @@ Host: Ubuntu1
 ```
 
 
+## Question 6
+- vnc set up wireshark captures on u1 and u2, filter: smtp
+- ssh to u2
+- mutt, m for new mail, addr `student@Ubuntu1.local`, y to send
+
+
 ## Question 7
 - Domain name: google.com
 - Top-level domain: com
