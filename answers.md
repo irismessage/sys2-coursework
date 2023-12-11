@@ -3,6 +3,17 @@
 For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1.
 
 
+## Lab Index
+- 2: gns3 config
+- 3: http, telnet, python, wireshark, fortune server
+- 4: dns, whois, dig, dhcp, ntp
+- 5: ftp, telnet, python, wireshark, netcat, bob.jpg
+- 6: cowsay protocol cwsp, cowsay server, telnet, python, wireshark, tcp, adding latency
+- 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
+- 8: routing, tun device, wireshark, ip route, netcat, router config
+- 9: rip routing, quagga, router config,
+
+
 ## Question 1
 
 jm3017
@@ -83,6 +94,13 @@ Answer: 8.8.4.4
 12
 ```
 Answer: 10.128.17.12
+
+
+## Question 3
+TODO
+```
+tracert 137.229.113.44
+```
 
 
 # Question 4
