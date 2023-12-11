@@ -5,13 +5,13 @@ For associated files i.e. screenshots, fortune.py, see the corresponding directo
 
 ## Lab Index
 - 2: gns3 config
-- 3: http, telnet, python, wireshark, fortune server
+- 3: http, telnet, python, wireshark, fortune server, mail, mutt mail client, maildir
 - 4: dns, whois, dig, dhcp, ntp
 - 5: ftp, telnet, python, wireshark, netcat, bob.jpg
 - 6: cowsay protocol cwsp, cowsay server, telnet, python, wireshark, tcp, adding latency
 - 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
 - 8: routing, tun device, wireshark, ip route, netcat, router config
-- 9: rip routing, quagga, router config,
+- 9: rip routing, quagga, router config
 
 
 ## Question 1
