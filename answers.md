@@ -4,6 +4,7 @@ For associated files i.e. screenshots, fortune.py, see the corresponding directo
 
 
 ## Lab Index
+- 1: ip addresses, traceroute / tracert, latency bandwidth propagation delay
 - 2: gns3 config
 - 3: http, telnet, python, wireshark, fortune server, mail, mutt mail client, maildir
 - 4: dns, whois, dig, dhcp, ntp
@@ -12,6 +13,7 @@ For associated files i.e. screenshots, fortune.py, see the corresponding directo
 - 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
 - 8: routing, tun device, wireshark, ip route, netcat, router config
 - 9: rip routing, quagga, router config
+- 10: icmp, mac addresses, crc checksums, arp routing, ethernet, cat5 rj45 cables, electronics and waves
 
 
 ## Question 1
