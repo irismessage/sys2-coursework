@@ -139,3 +139,14 @@ this is a test email for jm3017 coursework
 - The IANA *registrar* ID is 292. IANA does not provide "registrant IDs".
 - The "Registry Domain ID" is 2138514_DOMAIN_COM-VRSN.
 
+
+## Question 8
+Closest root server to Aberdeen is in Dundee, operated by ICANN, address 199.7.83.42, ASN 20144.
+
+Others are shown on the same location on root-servers.org but clicking them reveals all four to be in Edinburgh which is further from Aberdeen.
+
+TTL values:
+- york 300s
+- google 132s
+
+They differ because they are both constantly decreasing to 0 before being reset, and they aren't in sync because they have different operators.
