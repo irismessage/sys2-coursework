@@ -188,3 +188,5 @@ port used: 20313
 - pasv mode is more commonly used because it allwos the server to assign a port then you can use the full range of operations
 
 Bob transfer: neither username nor password nor data are encrypted. You can see the credentials sent in plaintext clearly highlighted in the screenshot. You can also see in the wikipedia screenshot that ftp is unencrypted.
+
+To show that the data is also unencrypted, I compare the bytes transferred to the hex dump of the file. Also note the jfif metadata viewable in wireshark.
