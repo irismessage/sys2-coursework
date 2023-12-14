@@ -165,10 +165,19 @@ no notes, see directory
 
 
 # Question 10
+wireshark windows loopback
 ```
 telnet 192.168.100.1 21
+
 user student
 pass 12345
 pasv
+
+python question10/ftp_port.py <output>
+telnet from result
+
 list
 ```
+filter wireshark by ftp or <pasv port>
+
+port used: 20313
