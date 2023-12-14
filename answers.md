@@ -105,11 +105,17 @@ tracert 137.229.113.44
 ```
 
 
-# Question 4
+## Question 4
 ```
 OPTIONS / HTTP/1.1
 Host: Ubuntu1
 ```
+
+
+## Question 5
+telnetlib fortune
+
+no notes, see directory
 
 
 ## Question 6
@@ -150,3 +156,9 @@ TTL values:
 - google 132s
 
 They differ because they are both constantly decreasing to 0 before being reset, and they aren't in sync because they have different operators.
+
+
+## Question 9
+dhcp release and request capture
+
+no notes, see directory
