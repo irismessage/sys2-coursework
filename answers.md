@@ -120,7 +120,7 @@ Host: Ubuntu1
 doesn't work
 
 - wireshark on windows, loopback, filter smtp
-- vnc wireshark u1, , any, filter smtp
+- vnc wireshark u1, eth0 or any, filter smtp
 - telnet from windows `telnet 192.168.100.1 25`
 ```
 mail from:student@Ubuntu1.local
