@@ -162,3 +162,13 @@ They differ because they are both constantly decreasing to 0 before being reset,
 dhcp release and request capture
 
 no notes, see directory
+
+
+# Question 10
+```
+telnet 192.168.100.1 21
+user student
+pass 12345
+pasv
+list
+```
