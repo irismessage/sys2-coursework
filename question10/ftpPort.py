@@ -4,15 +4,10 @@ if len(sys.argv) == 1:
   inputString = input()
 else:
   inputString = sys.argv[1]
-inputString = str(inputString).replace('(','')\
-              .replace(')','').replace(' ','').split(',')
-ip_addr_0 = inputString[0]
-ip_addr_1 = inputString[1]
-ip_addr_2 = inputString[2]
-ip_addr_3 = inputString[3]
-port_high = int(inputString[4])*256
-port_low  = int(inputString[5])
-outputString = "telnet " + ip_addr_0 + '.' + ip_addr_1 + '.' \
-               + ip_addr_2 + '.' + ip_addr_3 \
+inputList = inputString.strip('() ').split(',')
+ip_addr = inputList[0:4]
+port_high = int(inputList[4])*256
+port_low  = int(inputList[5])
+outputString = "telnet " + '.'.join(ip_addr) \
                + ' ' + str(port_high+port_low)
 print( outputString )
