@@ -119,14 +119,16 @@ Host: Ubuntu1
     - Ubuntu1.local loops back to u2 for some 
 doesn't work
 
-- vnc wireshark u1
-- telnet from windows
+- wireshark on windows, loopback, filter smtp
+- vnc wireshark u1, , any, filter smtp
+- telnet from windows `telnet 192.168.100.1 25`
 ```
-mail from: student@Ubuntu1.local
+mail from:student@Ubuntu1.local
 rcpt to:student@Ubuntu1.local
-Subject: <sub>
-<content>
-<enter enter>
+data
+Subject: test message
+this is a test email for jm3017 coursework
+<enter>.<enter>
 ```
 
 
