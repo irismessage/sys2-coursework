@@ -164,7 +164,7 @@ dhcp release and request capture
 no notes, see directory
 
 
-# Question 10
+## Question 10
 wireshark windows loopback
 ```
 telnet 192.168.100.1 21
@@ -178,6 +178,13 @@ telnet from result
 
 list
 ```
-filter wireshark by ftp or <pasv port>
+filter wireshark by ftp or ftp-data
 
 port used: 20313
+
+### Answer
+- Client ports: control 53000, data 53005
+- Server ports: control 21, data 20313
+- pasv mode is more commonly used because it allwos the server to assign a port then you can use the full range of operations
+
+Bob transfer: neither username nor password nor data are encrypted. You can see the credentials sent in plaintext clearly highlighted in the screenshot. You can also see in the wikipedia screenshot that ftp is unencrypted.
