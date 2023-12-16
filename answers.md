@@ -311,6 +311,61 @@ to enable broadcast
 sudo sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
 ```
 
+local broadcast address: 255.255.255.255.
+
+Calculating direct broadcast address for u2 eth1
+- eth1's CIDR address: 172.16.100.9/30
+- address in binary:
+```python
+>>> s = "172.16.100.9"
+
+>>> l = s.split(".")
+>>> b = [bin(int(x)).removeprefix("0b").zfill(8) for x in l]
+>>> b
+['10101100', '00010000', '01100100', '00001001']
+>>> addr = "".join(b)
+>>> addr
+'10101100000100000110010000001001'
+```
+- mask in binary:
+```python
+>>> mask = ("1" * 30).ljust(32, "0")
+>>> mask
+'11111111111111111111111111111100'
+```
+- broadcast addr:
+```python
+>>> broadcast = "10101100000100000110010000001011"
+>>> broadcast
+'10101100000100000110010000001011'
+```
+- back to dot notation:
+```python
+>>> b = broadcast
+>>> int(b[0:8], 2)
+172
+>>> int(b[8:16], 2)
+16
+>>> int(b[16:24], 2)
+100
+>>> int(b[24:32], 2)
+11
+```
+- result: 172.16.100.11
+
+disable broadcast ignore for all
+```sh
+ ssh u1 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+ ssh u2 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+ ssh u3 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+```
+
+finally ping
+```sh
+ping -b 172.16.100.11
+ping -b 255.255.255.255
+```
+
 
 ## Question 19
 todo
