@@ -1,15 +1,18 @@
 import socket
+from pathlib import Path
+
 
 TCP_IP = "192.168.100.1"       
 TCP_PORT = 1234
 BUF_SIZE = 1024
 SIZE = 8000                 # UPDATE
+DATA_FILE_PATH = Path(__file__).parent.joinpath("pg164.txt")
 
 sockTX = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sockTX.connect((TCP_IP, TCP_PORT))
 sockTX.settimeout(2.0) 
 
-dataFile = open("pg164.txt", 'r')
+dataFile = open(DATA_FILE_PATH, 'r')
 try: 
   print("RX:" + sockTX.recv(BUF_SIZE).decode('UTF-8') )  
   print("TX: helo")
