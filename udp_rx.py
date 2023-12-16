@@ -12,7 +12,7 @@ BUF_SIZE = 9000
 try:
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock_rx:
         sock_rx.bind((UDP_IP, UDP_PORT))
-        sock_rx.settimeout(2)
+        sock_rx.settimeout(10)
 
         data, addr = sock_rx.recvfrom(BUF_SIZE)
         file_name = data.strip()
@@ -23,6 +23,8 @@ try:
         print(f"RX File: {file_name}")
 
         with open(file_name, "wb") as f:
+            sock_rx.settimeout(2)
+
             for i in range(0, number_of_segments):
                 data, addr = sock_rx.recvfrom(BUF_SIZE)
                 f.write(data)

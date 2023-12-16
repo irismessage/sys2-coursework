@@ -268,6 +268,7 @@ sudo ip tunnel add tun0 mode ipip local 172.16.100.5 remote 172.16.100.9
 sudo ip link set tun0 up
 sudo ip addr add 10.100.1.2/24 dev tun0
 sudo ip route add 10.100.2.0/24 dev tun0
+sudo ip route add 10.100.3.0/24 dev tun0
 
 nc -u -l -k -p 8083 | pv | nc -u 10.100.2.2 8083
 ```
@@ -279,23 +280,29 @@ sudo ip addr add 10.100.2.2/24 dev tun0
 sudo ip route add 10.100.1.0/24 dev tun0
 
 
-sudo ip tunnel add tun1 mode ipip local 172.16.100.9 remote 172.16.100.14
+sudo ip tunnel add tun1 mode ipip local 172.16.100.9 remote 172.16.100.13
 sudo ip link set tun1 up
-sudo ip addr add 10.100.3.2/24 dev tun1
-sudo ip route add 10.100.4.0/24 dev tun1
-
-nc -u -l -k -p 8083 | pv | nc -u 10.100.4.2 8083
+sudo ip addr add 10.100.2.3/24 dev tun1
+sudo ip route add 10.100.3.0/24 dev tun1
 ```
 on u3, from u2:
 ```sh
-sudo ip tunnel add tun1 mode ipip local 172.16.100.14 remote 172.16.100.9
+sudo ip tunnel add tun1 mode ipip local 172.16.100.13 remote 172.16.100.9
 sudo ip link set tun1 up
-sudo ip addr add 10.100.4.2/24 dev tun1
-sudo ip route add 10.100.3.0/24 dev tun1
+sudo ip addr add 10.100.3.2/24 dev tun1
+sudo ip route add 10.100.2.0/24 dev tun1
+sudo ip route add 10.100.1.0/24 dev tun1
 
 nc -u -l -k -p 8083 | pv | nc -u 192.168.100.254 8083
 ```
-
+ping tests, run on all:
+```sh
+ping -c 3 10.100.1.2
+ping -c 3 10.100.2.2
+ping -c 3 10.100.2.3
+ping -c 3 10.100.3.2
+```
+to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
 
 ## Question 20
 wireshark windows Ethernet 2 filter icmp
