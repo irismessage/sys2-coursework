@@ -233,7 +233,7 @@ Conversely, in TCP the size of the header itself is stored in the header. To get
 The PSH flag is set whenever the client has finished transmitting data and is watiting for a response. It's set for "helo", and for "text", then the 8000 characters under the sea are sent in one block of packets with only ACK, which is closed off with a PSH once the whole lot of data is sent. You can see this as the PSH packet from 192.168.100.254 (windows) to 192.168.100.1 (u1) is followed by switching to sending packets from u1 to windows as the server returns the cowsay text.
 
 
-# Question 15
+## Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
 
 The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero.[1] This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15. 
@@ -241,3 +241,8 @@ The value prior to the final step is calculated by the sum of all the other valu
 Therefore, a correctly generated checksum of a valid TCP packet will never have a checksum of 0xFFFF.
 
 [1] todo
+
+
+## Question 16
+
+
