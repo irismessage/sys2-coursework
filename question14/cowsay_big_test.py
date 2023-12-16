@@ -8,20 +8,20 @@ BUF_SIZE = 1024
 SIZE = 8000  # UPDATE
 DATA_FILE_PATH = Path(__file__).parent.joinpath("pg164.txt")
 
-sockTX = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sockTX.connect((TCP_IP, TCP_PORT))
-sockTX.settimeout(2.0)
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((TCP_IP, TCP_PORT))
+sock.settimeout(2.0)
 
-dataFile = open(DATA_FILE_PATH, "r")
+data_file = open(DATA_FILE_PATH, "r")
 try:
-    print("RX:" + sockTX.recv(BUF_SIZE).decode("UTF-8"))
+    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
     print("TX: helo")
-    sockTX.send(b"helo")
-    print("RX:" + sockTX.recv(BUF_SIZE).decode("UTF-8"))
+    sock.send(b"helo")
+    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
 
     data = []
     while len(data) < SIZE:
-        text = dataFile.read(1)
+        text = data_file.read(1)
         if text != "":
             if (
                 (ord(text) > 0x2F and ord(text) < 0x3A)
@@ -33,13 +33,13 @@ try:
             else:
                 data.append(" ")
 
-    sockTX.send(b"text")
-    sockTX.send("".join(str(x) for x in data).encode("UTF-8"))
-    sockTX.send(b"\n")
+    sock.send(b"text")
+    sock.send("".join(str(x) for x in data).encode("UTF-8"))
+    sock.send(b"\n")
 
     try:
         while True:
-            data = sockTX.recv(BUF_SIZE)
+            data = sock.recv(BUF_SIZE)
             if not data:
                 break
 
@@ -48,10 +48,10 @@ try:
     except socket.timeout:
         pass
 
-    sockTX.send(b"quit\n")
-    print("RX:" + sockTX.recv(BUF_SIZE).decode("UTF-8"))
-    sockTX.close()
+    sock.send(b"quit\n")
+    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
+    sock.close()
 
 except KeyboardInterrupt:
-    sockTX.close()
+    sock.close()
     print("Exit")
