@@ -197,4 +197,21 @@ To show that the data is also unencrypted, I compare the bytes transferred to th
 
 # Question 12
 
+from lab6:
+`sudo tc qdisc add dev eth1 root netem delay 2500ms`
+10s delay:
+`sudo tc qdisc add dev eth1 root netem delay 10000ms`
 
+capture u1, eth1, tcp.port == 1234
+
+connect from u1:
+`telnet 172.16.100.9 1234`
+
+finally remove the latency from u2
+`sudo tc qdisc del dev eth1 root`
+
+### Answer
+The RTO varies by doubling each time, starting at the standard one second (1s), then waiting 2s, then 4s. Finally the connection succeeds. In this case the client does not give up, and I successfully ran helo, text, and quit, albeit with the excpected delay. I then disconnected manually.
+
+However I had some inconsistent behaivour, in one case I got some ICMP destination unreachable packets, in another the connection retried unsu
+ccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
