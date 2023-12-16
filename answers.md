@@ -222,7 +222,9 @@ The server knows this is a new connection because the initial absolute sequence 
 
 
 ## Question 14
-todo
+In an UDP packet, the size of the data can be determined solely from the value of the "length" section header. Subtract the size of the header, which is always 8 bytes, to get the size of the data.
+
+Conversely, in TCP the size of the header itself is stored in the header. To get the size of the data, you need to subtract the size of the header from the total size of the TCP segment. This can't be found from the header of a sole random TCP packet, you have to get it from either the packet length in the IP header, from which you also need to subtract the size of the IP header, or from the Maximum Segment Size sent during link negotation, assuming conformance with the MSS.
 
 
 # Question 15
