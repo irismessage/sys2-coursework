@@ -252,5 +252,15 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 - solution: replace winpcap with npcap
 
 - ok nvm it wants me to demonstrate ip segmentation by sending it across a link
+- on u1: `nc -u -l -k -p 8083 | pv | nc -u 192.168.100.254 8083`
 
 Three (3) UDP data packets are used in the transfer. If you count the packets for file name and number of segments, that's five.
+
+The fragment off set field is measured in 8-bit bytes. You can see this because the final fragment offset shown in wireshark of 8880 matches the BUF_SIZE of 9000, which is measured in bytes.
+
+
+## Question 20
+wireshark windows Ethernet 2 filter icmp
+
+To generate destination unreachable:
+`ping 172.16.100.100`
