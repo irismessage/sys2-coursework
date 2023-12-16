@@ -230,6 +230,8 @@ Conversely, in TCP the size of the header itself is stored in the header. To get
 - run cowsay_big_test.py on windows
 - wireshark on u1, eth0, tcp.port == 1234
 
+The PSH flag is set whenever the client has finished transmitting data and is watiting for a response. It's set for "helo", and for "text", then the 8000 characters under the sea are sent in one block of packets with only ACK, which is closed off with a PSH once the whole lot of data is sent. You can see this as the PSH packet from 192.168.100.254 (windows) to 192.168.100.1 (u1) is followed by switching to sending packets from u1 to windows as the server returns the cowsay text.
+
 
 # Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
