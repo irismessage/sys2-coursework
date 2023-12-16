@@ -1,9 +1,9 @@
 import socket
 
-TCP_IP = "172.16.100.9"       
+TCP_IP = "192.168.100.1"       
 TCP_PORT = 1234
 BUF_SIZE = 1024
-SIZE = 88                   # UPDATE
+SIZE = 8000                 # UPDATE
 
 sockTX = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sockTX.connect((TCP_IP, TCP_PORT))
