@@ -246,3 +246,9 @@ Therefore, a correctly generated checksum of a valid TCP packet will never have 
 ## Question 16
 
 Note the question is slightly unclear, this also requires setting BUF_SIZE in udpRX.py to 9000.
+
+- wireguard windows loopback, udp.port == 8080
+- won't capture this for some reason?
+- solution: replace winpcap with npcap
+
+Three (3) UDP data packets are used in the transfer. If you count the packets for file name and number of segments, that's five.
