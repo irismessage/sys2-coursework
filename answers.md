@@ -270,7 +270,7 @@ sudo ip addr add 10.100.1.2/24 dev tun0
 sudo ip route add 10.100.2.0/24 dev tun0
 sudo ip route add 10.100.3.0/24 dev tun0
 
-nc -u -l -k -p 8083 | pv | nc -u 10.100.2.2 8083
+nc -u -l -k -p 8083 | pv | nc -u 10.100.3.2 8083
 ```
 on u2, from u1 and to u3:
 ```sh
