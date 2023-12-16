@@ -217,5 +217,19 @@ However I had some inconsistent behaivour, in one case I got some ICMP destinati
 ccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
 
 
-# Question 13
+## Question 13
 The server knows this is a new connection because the initial absolute sequence number is randomly selected, and therefore will be different from the initial sequence number used in the first SYN packet from the previous connection.
+
+
+## Question 14
+todo
+
+
+# Question 15
+The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
+
+The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero.[1] This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15. 
+
+Therefore, a correctly generated checksum of a valid TCP packet will never have a checksum of 0xFFFF.
+
+[1] todo
