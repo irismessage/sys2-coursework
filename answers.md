@@ -12,7 +12,7 @@ For associated files i.e. screenshots, fortune.py, see the corresponding directo
 - 6: cowsay protocol cwsp, cowsay server, telnet, python, wireshark, tcp, adding latency
 - 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
 - 8: routing, tun device, wireshark, ip route, netcat, router config
-- 9: rip routing, quagga, router config
+- 9: broadcast, direct and local, multicast, rip routing, quagga, router config
 - 10: icmp, mac addresses, crc checksums, arp routing, ethernet, cat5 rj45 cables, electronics and waves
 
 
@@ -303,6 +303,18 @@ ping -c 3 10.100.2.3
 ping -c 3 10.100.3.2
 ```
 to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
+
+
+## Question 18
+to enable broadcast
+```sh
+sudo sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+```
+
+
+## Question 19
+todo
+
 
 ## Question 20
 wireshark windows Ethernet 2 filter icmp
