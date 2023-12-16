@@ -215,3 +215,7 @@ The RTO varies by doubling each time, starting at the standard one second (1s), 
 
 However I had some inconsistent behaivour, in one case I got some ICMP destination unreachable packets, in another the connection retried unsu
 ccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
+
+
+# Question 13
+The server knows this is a new connection because the initial absolute sequence number is randomly selected, and therefore will be different from the initial sequence number used in the first SYN packet from the previous connection.
