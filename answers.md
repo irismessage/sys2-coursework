@@ -259,6 +259,39 @@ Three (3) UDP data packets are used in the transfer. If you count the packets fo
 The fragment off set field is measured in 8-bit bytes. You can see this because the final fragment offset shown in wireshark of 8880 matches the BUF_SIZE of 9000, which is measured in bytes.
 
 
+## Question 17
+From the PC, pinging these IP addresses gets routed no-where. It's unclear whether you also want me to try from inside Ubuntu?
+
+on u1, to u2:
+```sh
+sudo ip tunnel add tun0 mode ipip local 172.16.100.5 remote 172.16.100.9
+sudo ip link set tun0 up
+sudo ip addr add 10.100.1.2/24 dev tun0
+
+nc -u -l -k -p 8083 | pv | nc -u 10.100.2.2 8083
+```
+on u2, from u1 and to u3:
+```sh
+sudo ip tunnel add tun0 mode ipip local 172.16.100.9 remote 172.16.100.5
+sudo ip link set tun0 up
+sudo ip addr add 10.100.2.2/24 dev tun0
+
+sudo ip tunnel add tun1 mode ipip local 172.16.100.9 remote 172.16.100.14
+sudo ip link set tun1 up
+sudo ip addr add 10.100.3.2/24 dev tun0
+
+nc -u -l -k -p 8083 | pv | nc -u 10.100.4.2 8083
+```
+on u3, from u2:
+```sh
+sudo ip tunnel add tun1 mode ipip local 172.16.100.14 remote 172.16.100.9
+sudo ip link set tun1 up
+sudo ip addr add 10.100.4.2/24 dev tun1
+
+nc -u -l -k -p 8083 | pv | nc -u 192.168.100.254 8083
+```
+
+
 ## Question 20
 wireshark windows Ethernet 2 filter icmp
 
