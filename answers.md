@@ -226,6 +226,10 @@ In an UDP packet, the size of the data can be determined solely from the value o
 
 Conversely, in TCP the size of the header itself is stored in the header. To get the size of the data, you need to subtract the size of the header from the total size of the TCP segment. This can't be found from the header of a sole random TCP packet, you have to get it from either the packet length in the IP header, from which you also need to subtract the size of the IP header, or from the Maximum Segment Size sent during link negotation, assuming conformance with the MSS.
 
+### Cowsay transfer
+- run cowsay_big_test.py on windows
+- wireshark on u1, eth0, tcp.port == 1234
+
 
 # Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
