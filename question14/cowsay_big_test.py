@@ -25,35 +25,33 @@ with open(DATA_FILE_PATH, "r") as data_file:
                 data.append(" ")
 text = "".join(data)
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect((TCP_IP, TCP_PORT))
-sock.settimeout(2.0)
-
-try:
-    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
-    print("TX: helo")
-    sock.send(b"helo")
-    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
-
-    sock.send(b"text")
-    sock.send(text.encode("UTF-8"))
-    sock.send(b"\n")
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+    sock.connect((TCP_IP, TCP_PORT))
+    sock.settimeout(2.0)
 
     try:
-        while True:
-            data = sock.recv(BUF_SIZE)
-            if not data:
-                break
+        print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
+        print("TX: helo")
+        sock.send(b"helo")
+        print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
 
-            # print("### " + str(len(data)) + " ###")
-            print(data.decode("UTF-8"))
-    except socket.timeout:
-        pass
+        sock.send(b"text")
+        sock.send(text.encode("UTF-8"))
+        sock.send(b"\n")
 
-    sock.send(b"quit\n")
-    print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
-    sock.close()
+        try:
+            while True:
+                data = sock.recv(BUF_SIZE)
+                if not data:
+                    break
 
-except KeyboardInterrupt:
-    sock.close()
-    print("Exit")
+                # print("### " + str(len(data)) + " ###")
+                print(data.decode("UTF-8"))
+        except socket.timeout:
+            pass
+
+        sock.send(b"quit\n")
+        print("RX:" + sock.recv(BUF_SIZE).decode("UTF-8"))
+
+    except KeyboardInterrupt:
+        print("Exit")
