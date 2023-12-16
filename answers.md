@@ -251,4 +251,6 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 - won't capture this for some reason?
 - solution: replace winpcap with npcap
 
+- ok nvm it wants me to demonstrate ip segmentation by sending it across a link
+
 Three (3) UDP data packets are used in the transfer. If you count the packets for file name and number of segments, that's five.
