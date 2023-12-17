@@ -366,8 +366,24 @@ ping -b 172.16.100.11
 ping -b 255.255.255.255
 ```
 
+todo
+
 
 ## Question 19
+- /etc/quagga/{ripd,zebra}.conf need to be ready
+- wireshark u1 all, rip
+- service zebra restart
+- service ripd restart
+- access router settings:
+    - `ssh -L 8000:172.16.100.6:80 root@192.168.100.1`
+	- http://127.0.0.1:8000/
+	- password: admin
+
+note: starting before it's ready will break the u1 connection, need restart in gns
+
+Broadcast address: 172.16.100.7
+Routes added: can't see any. actually some are gone.
+
 todo
 
 
@@ -376,3 +392,4 @@ wireshark windows Ethernet 2 filter icmp
 
 To generate destination unreachable:
 `ping 172.16.100.100`
+todo
