@@ -366,7 +366,7 @@ ping -b 172.16.100.11
 ping -b 255.255.255.255
 ```
 
-todo
+todo why it same both
 
 
 ## Question 19
@@ -384,12 +384,18 @@ note: starting before it's ready will break the u1 connection, need restart in g
 Broadcast address: 172.16.100.7
 Routes added: can't see any. actually some are gone.
 
-todo
+todo check this again
 
 
 ## Question 20
-wireshark windows Ethernet 2 filter icmp
+u1 any filter icmp
 
 To generate destination unreachable:
 `ping 172.16.100.100`
-todo
+
+To generate port unreachable:
+`echo test | nc -u -u 127.0.0.1 8083`
+
+why does gns3 vm go down at random right now when I'm trying to take the final screenshot
+
+todo final screenshot
