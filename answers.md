@@ -55,6 +55,11 @@ end
 ping 192.168.2.12
 ```
 
+### Screenshots
+![](question01/Screenshot 2023-10-05 124649.png)
+
+![](question01/Screenshot 2023-10-05 124553.png)
+
 
 ## Question 2
 
@@ -99,6 +104,9 @@ Answer: 8.8.4.4
 ```
 Answer: 10.128.17.12
 
+### Screenshots
+![](question02/Screenshot 2023-12-07 130643.png)
+
 
 ## Question 3
 TODO
@@ -108,6 +116,7 @@ tracert 137.229.113.44
 
 
 ## Question 4
+todo
 ```
 OPTIONS / HTTP/1.1
 Host: Ubuntu1
@@ -119,12 +128,15 @@ telnetlib fortune
 
 no notes, see directory
 
+### Screenshots
+![](question05/Screenshot 2023-12-14 123533.png)
+
 
 ## Question 6
 - vnc set up wireshark captures on u1 and u2, filter: smtp
 - ssh to u2
 - mutt, m for new mail, addr `student@192.168.100.1`, y to send
-    - Ubuntu1.local loops back to u2 for some 
+    - Ubuntu1.local loops back to u2 for some
 doesn't work
 
 - wireshark on windows, loopback, filter smtp
@@ -139,6 +151,10 @@ this is a test email for jm3017 coursework
 <enter>.<enter>
 ```
 
+### Screenshots
+![](question06/Screenshot 2023-12-14 121323.png)
+![](question06/Screenshot 2023-12-14 121302.png)
+
 
 ## Question 7
 - Domain name: google.com
@@ -146,6 +162,11 @@ this is a test email for jm3017 coursework
 - Subdomain: www
 - The IANA *registrar* ID is 292. IANA does not provide "registrant IDs".
 - The "Registry Domain ID" is 2138514_DOMAIN_COM-VRSN.
+
+### Screenshots
+![](question07/Screenshot 2023-12-07 133852.png)
+![](question07/Screenshot 2023-12-07 132646.png)
+![](question07/Screenshot 2023-12-07 133812.png)
 
 
 ## Question 8
@@ -159,11 +180,19 @@ TTL values:
 
 They differ because they are both constantly decreasing to 0 before being reset, and they aren't in sync because they have different operators.
 
+### Screenshots
+![](question08/Screenshot 2023-12-14 121624.png)
+![](question08/Screenshot 2023-12-14 122312.png)
+![](question08/Screenshot 2023-12-14 122235.png)
+
 
 ## Question 9
 dhcp release and request capture
 
 no notes, see directory
+
+### Screenshots
+![](question09/Screenshot 2023-12-14 123225.png)
 
 
 ## Question 10
@@ -189,12 +218,24 @@ port used: 20313
 - Server ports: control 21, data 20313
 - pasv mode is more commonly used because it allwos the server to assign a port then you can use the full range of operations
 
+### Screenshots
+![](question10/Screenshot 2023-12-14 130756.png)
+![](question10/Screenshot 2023-12-14 130736.png)
+![](question10/Screenshot 2023-12-14 130805.png)
+
 
 ## Question 11
 
 Bob transfer: neither username nor password nor data are encrypted. You can see the credentials sent in plaintext clearly highlighted in the screenshot. You can also see in the wikipedia screenshot that ftp is unencrypted.
 
 To show that the data is also unencrypted, I compare the bytes transferred to the hex dump of the file. Also note the jfif metadata viewable in wireshark.
+
+### Screenshots
+![](question11/Screenshot 2023-12-14 131947.png)
+![](question11/Screenshot 2023-12-14 132609.png)
+![](question11/Screenshot 2023-12-14 131718.png)
+![](question11/Screenshot 2023-12-14 130937.png)
+![](question11/Screenshot 2023-12-14 131629.png)
 
 
 # Question 12
@@ -218,6 +259,9 @@ The RTO varies by doubling each time, starting at the standard one second (1s), 
 However I had some inconsistent behaivour, in one case I got some ICMP destination unreachable packets, in another the connection retried unsu
 ccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
 
+### Screenshots
+![](question12/Screenshot 2023-12-16 163618.png)
+
 
 ## Question 13
 The server knows this is a new connection because the initial absolute sequence number is randomly selected, and therefore will be different from the initial sequence number used in the first SYN packet from the previous connection.
@@ -234,11 +278,14 @@ Conversely, in TCP the size of the header itself is stored in the header. To get
 
 The PSH flag is set whenever the client has finished transmitting data and is watiting for a response. It's set for "helo", and for "text", then the 8000 characters under the sea are sent in one block of packets with only ACK, which is closed off with a PSH once the whole lot of data is sent. You can see this as the PSH packet from 192.168.100.254 (windows) to 192.168.100.1 (u1) is followed by switching to sending packets from u1 to windows as the server returns the cowsay text.
 
+### Screenshots
+![](question14/Screenshot 2023-12-16 175112.png)
+
 
 ## Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
 
-The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero.[1] This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15. 
+The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero.[1] This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
 
 Therefore, a correctly generated checksum of a valid TCP packet will never have a checksum of 0xFFFF.
 
@@ -259,6 +306,14 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 Three (3) UDP data packets are used in the transfer. If you count the packets for file name and number of segments, that's five.
 
 The fragment off set field is measured in 8-bit bytes. You can see this because the final fragment offset shown in wireshark of 8880 matches the BUF_SIZE of 9000, which is measured in bytes.
+
+### Screenshots
+![](question16/Screenshot 2023-12-16 215924.png)
+![](question16/Screenshot 2023-12-16 220017.png)
+![](question16/Screenshot 2023-12-16 220036.png)
+![](question16/Screenshot 2023-12-16 220338.png)
+![](question16/Screenshot 2023-12-16 215915.png)
+![](question16/Screenshot 2023-12-16 220002.png)
 
 
 ## Question 17
@@ -305,6 +360,14 @@ ping -c 3 10.100.2.3
 ping -c 3 10.100.3.2
 ```
 to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
+
+### Screenshots
+![](question17/Screenshot 2023-12-16 231112.png)
+![](question17/Screenshot 2023-12-16 231155.png)
+![](question17/Screenshot 2023-12-16 231123.png)
+![](question17/Screenshot 2023-12-16 231207.png)
+![](question17/Screenshot 2023-12-16 231142.png)
+![](question17/Screenshot 2023-12-16 220749.png)
 
 
 ## Question 18
@@ -370,6 +433,9 @@ ping -b 255.255.255.255
 
 todo why it same both
 
+### Screenshots
+![](question18/Screenshot 2023-12-16 234050.png)
+
 
 ## Question 19
 - /etc/quagga/{ripd,zebra}.conf need to be ready
@@ -388,6 +454,11 @@ Routes added: can't see any. actually some are gone.
 
 todo check this again
 
+### Screenshots
+![](question19/Screenshot 2023-12-17 001603.png)
+![](question19/Screenshot 2023-12-16 234909.png)
+![](question19/Screenshot 2023-12-17 001552.png)
+
 
 ## Question 20
 u1 any filter icmp
@@ -401,3 +472,6 @@ To generate port unreachable:
 why does gns3 vm go down at random right now when I'm trying to take the final screenshot
 
 todo final screenshot
+
+### Screenshots
+![](question20/Screenshot 2023-12-17 003101.png)
