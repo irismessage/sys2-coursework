@@ -4,6 +4,8 @@ The markdown copy `answers.md` is the source and the pdf copy `answers.pdf` is c
 
 For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1. Screenshots should be embedded in the pdf.
 
+todo check word limit
+
 
 ## Lab Index
 - 1: ip addresses, traceroute / tracert, latency bandwidth propagation delay
@@ -109,10 +111,16 @@ Answer: 10.128.17.12
 
 
 ## Question 3
-TODO
 ```
 tracert 137.229.113.44
 ```
+
+Note: tracert on the virtual machine didn't work, so I used traceroute on my computer.
+
+I estimate the packet crosses to america when it reaches `internet2-gw.mx1.lon.uk.geant.net (62.40.124.45)`. My reasoning is that at this point the round trip time spikes from 11ms to 95ms. This must be because of the physical distance. Also, every prior hop is on JANET.
+
+### Screenshots
+![](question03/Screenshot_20240116_164159.jpg)
 
 
 ## Question 4
@@ -285,11 +293,9 @@ The PSH flag is set whenever the client has finished transmitting data and is wa
 ## Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
 
-The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero.[1] This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
+The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero. This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
 
 Therefore, a correctly generated checksum of a valid TCP packet will never have a checksum of 0xFFFF.
-
-[1] todo
 
 
 ## Question 16
