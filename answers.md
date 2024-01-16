@@ -1,6 +1,8 @@
 # Answers and Notes
 
-For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1.
+The markdown copy `answers.md` is the source and the pdf copy `answers.pdf` is converted with pandoc.
+
+For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1. Screenshots should be embedded in the pdf.
 
 
 ## Lab Index
