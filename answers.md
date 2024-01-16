@@ -124,11 +124,16 @@ I estimate the packet crosses to america when it reaches `internet2-gw.mx1.lon.u
 
 
 ## Question 4
-todo
 ```
+telnet 192.168.100.1 80
+^]
+set localecho
 OPTIONS / HTTP/1.1
 Host: Ubuntu1
 ```
+
+### Screenshots
+![](question04/Screenshot 2024-01-16 165455.png)
 
 
 ## Question 5
