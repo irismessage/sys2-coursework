@@ -290,8 +290,8 @@ The RTO varies by doubling each time, starting at the standard one second (1s), 
 ```
 1 - 0 = 1
 3 - 1 = 2
-7.2 - 3 ≈ 4
-15.4 - 7.2 ≈ 8
+7.2 - 3 = 4.2, roughly 4
+15.4 - 7.2 = 8.2, roughly 8
 ```
 
 Finally the connection succeeds. In this case the client does not give up, and I successfully ran helo, text, and quit, albeit with the excpected delay. I then disconnected manually.
