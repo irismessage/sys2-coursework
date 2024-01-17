@@ -9,5 +9,4 @@ for folder in sorted(workdir.glob("question*/")):
     for screenshot in folder.iterdir():
         if not screenshot.suffix == ".png":
             continue
-        print(f"![]({screenshot})")
-    print()
+        print(f"![]({screenshot})\n")

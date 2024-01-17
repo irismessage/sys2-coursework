@@ -23,7 +23,9 @@ todo check word limit
 ## Question 1
 
 jm3017
+
 3 + 0 + 1 + 7
+
 sum 11
 
 ### PC1
@@ -57,10 +59,11 @@ end
 ping 192.168.2.12
 ```
 
+todo screenshot FROM other devices
 ### Screenshots
-![](question01/Screenshot 2023-10-05 124649.png)
-
 ![](question01/Screenshot 2023-10-05 124553.png)
+
+![](question01/Screenshot 2023-10-05 124649.png)
 
 
 ## Question 2
@@ -166,6 +169,7 @@ this is a test email for jm3017 coursework
 
 ### Screenshots
 ![](question06/Screenshot 2023-12-14 121323.png)
+
 ![](question06/Screenshot 2023-12-14 121302.png)
 
 
@@ -178,7 +182,9 @@ this is a test email for jm3017 coursework
 
 ### Screenshots
 ![](question07/Screenshot 2023-12-07 133852.png)
+
 ![](question07/Screenshot 2023-12-07 132646.png)
+
 ![](question07/Screenshot 2023-12-07 133812.png)
 
 
@@ -195,7 +201,9 @@ They differ because they are both constantly decreasing to 0 before being reset,
 
 ### Screenshots
 ![](question08/Screenshot 2023-12-14 121624.png)
+
 ![](question08/Screenshot 2023-12-14 122312.png)
+
 ![](question08/Screenshot 2023-12-14 122235.png)
 
 
@@ -233,7 +241,9 @@ port used: 20313
 
 ### Screenshots
 ![](question10/Screenshot 2023-12-14 130756.png)
+
 ![](question10/Screenshot 2023-12-14 130736.png)
+
 ![](question10/Screenshot 2023-12-14 130805.png)
 
 
@@ -245,9 +255,13 @@ To show that the data is also unencrypted, I compare the bytes transferred to th
 
 ### Screenshots
 ![](question11/Screenshot 2023-12-14 131947.png)
+
 ![](question11/Screenshot 2023-12-14 132609.png)
+
 ![](question11/Screenshot 2023-12-14 131718.png)
+
 ![](question11/Screenshot 2023-12-14 130937.png)
+
 ![](question11/Screenshot 2023-12-14 131629.png)
 
 
@@ -320,10 +334,15 @@ The fragment off set field is measured in 8-bit bytes. You can see this because 
 
 ### Screenshots
 ![](question16/Screenshot 2023-12-16 215924.png)
+
 ![](question16/Screenshot 2023-12-16 220017.png)
+
 ![](question16/Screenshot 2023-12-16 220036.png)
+
 ![](question16/Screenshot 2023-12-16 220338.png)
+
 ![](question16/Screenshot 2023-12-16 215915.png)
+
 ![](question16/Screenshot 2023-12-16 220002.png)
 
 
@@ -374,10 +393,15 @@ to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
 
 ### Screenshots
 ![](question17/Screenshot 2023-12-16 231112.png)
+
 ![](question17/Screenshot 2023-12-16 231155.png)
+
 ![](question17/Screenshot 2023-12-16 231123.png)
+
 ![](question17/Screenshot 2023-12-16 231207.png)
+
 ![](question17/Screenshot 2023-12-16 231142.png)
+
 ![](question17/Screenshot 2023-12-16 220749.png)
 
 
@@ -467,7 +491,9 @@ todo check this again
 
 ### Screenshots
 ![](question19/Screenshot 2023-12-17 001603.png)
+
 ![](question19/Screenshot 2023-12-16 234909.png)
+
 ![](question19/Screenshot 2023-12-17 001552.png)
 
 
