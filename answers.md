@@ -251,7 +251,7 @@ To show that the data is also unencrypted, I compare the bytes transferred to th
 ![](question11/Screenshot 2023-12-14 131629.png)
 
 
-# Question 12
+## Question 12
 
 from lab6:
 `sudo tc qdisc add dev eth1 root netem delay 2500ms`
