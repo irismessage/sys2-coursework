@@ -6,7 +6,7 @@ for folder in sorted(workdir.glob("question*/")):
         continue
     
     print("### Screenshots")
-    for screenshot in folder.iterdir():
+    for screenshot in sorted(folder.iterdir()):
         if not screenshot.suffix == ".png":
             continue
         print(f"![]({screenshot})\n")

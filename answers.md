@@ -68,7 +68,7 @@ todo screenshot FROM other devices
 
 ## Question 2
 
-### i
+### i.
 ```python
 >>> b = bin(134743044)
 >>> b
@@ -90,7 +90,7 @@ todo screenshot FROM other devices
 ```
 Answer: 8.8.4.4
 
-### ii
+### ii.
 ```python
 >>> s = "00001010.10000000.00010001.00001100"
 >>> b = s.replace(".", "")
@@ -109,18 +109,21 @@ Answer: 8.8.4.4
 ```
 Answer: 10.128.17.12
 
-### Screenshots
-![](question02/Screenshot 2023-12-07 130643.png)
-
 
 ## Question 3
 ```
 tracert 137.229.113.44
 ```
 
-Note: tracert on the virtual machine didn't work, so I used traceroute on my computer.
-
 I estimate the packet crosses to america when it reaches `internet2-gw.mx1.lon.uk.geant.net (62.40.124.45)`. My reasoning is that at this point the round trip time spikes from 11ms to 95ms. This must be because of the physical distance. Also, every prior hop is on JANET.
+
+However, it's more likely it's at the next hop (163.253.1.120), since GEANT is still a European organisation, whereas Internet2 is in the USA. The ping is also higher.
+
+- https://en.wikipedia.org/wiki/JANET
+- https://en.wikipedia.org/wiki/G%C3%89ANT
+- https://en.wikipedia.org/wiki/Internet2
+
+Note: tracert on the virtual machine didn't work, so I used traceroute on my computer.
 
 ### Screenshots
 ![](question03/Screenshot_20240116_164159.jpg)
@@ -142,7 +145,7 @@ Host: Ubuntu1
 ## Question 5
 telnetlib fortune
 
-no notes, see directory
+no notes, see question05/fortune.py
 
 ### Screenshots
 ![](question05/Screenshot 2023-12-14 123533.png)
@@ -168,9 +171,9 @@ this is a test email for jm3017 coursework
 ```
 
 ### Screenshots
-![](question06/Screenshot 2023-12-14 121323.png)
-
 ![](question06/Screenshot 2023-12-14 121302.png)
+
+![](question06/Screenshot 2023-12-14 121323.png)
 
 
 ## Question 7
@@ -181,11 +184,11 @@ this is a test email for jm3017 coursework
 - The "Registry Domain ID" is 2138514_DOMAIN_COM-VRSN.
 
 ### Screenshots
-![](question07/Screenshot 2023-12-07 133852.png)
-
 ![](question07/Screenshot 2023-12-07 132646.png)
 
 ![](question07/Screenshot 2023-12-07 133812.png)
+
+![](question07/Screenshot 2023-12-07 133852.png)
 
 
 ## Question 8
@@ -210,7 +213,9 @@ They differ because they are both constantly decreasing to 0 before being reset,
 ## Question 9
 dhcp release and request capture
 
-no notes, see directory
+no notes, see screenshots in question09/
+
+todo should be more than one screenshot?
 
 ### Screenshots
 ![](question09/Screenshot 2023-12-14 123225.png)
@@ -240,12 +245,13 @@ port used: 20313
 - pasv mode is more commonly used because it allwos the server to assign a port then you can use the full range of operations
 
 ### Screenshots
-![](question10/Screenshot 2023-12-14 130756.png)
-
 ![](question10/Screenshot 2023-12-14 130736.png)
+
+![](question10/Screenshot 2023-12-14 130756.png)
 
 ![](question10/Screenshot 2023-12-14 130805.png)
 
+![](question10/Screenshot 2023-12-14 130937.png)
 
 ## Question 11
 
@@ -254,15 +260,13 @@ Bob transfer: neither username nor password nor data are encrypted. You can see 
 To show that the data is also unencrypted, I compare the bytes transferred to the hex dump of the file. Also note the jfif metadata viewable in wireshark.
 
 ### Screenshots
-![](question11/Screenshot 2023-12-14 131947.png)
-
-![](question11/Screenshot 2023-12-14 132609.png)
+![](question11/Screenshot 2023-12-14 131629.png)
 
 ![](question11/Screenshot 2023-12-14 131718.png)
 
-![](question11/Screenshot 2023-12-14 130937.png)
+![](question11/Screenshot 2023-12-14 131947.png)
 
-![](question11/Screenshot 2023-12-14 131629.png)
+![](question11/Screenshot 2023-12-14 132609.png)
 
 
 ## Question 12
