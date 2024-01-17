@@ -4,21 +4,6 @@ The markdown copy `answers.md` is the source and the pdf copy `answers.pdf` is c
 
 For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1. Screenshots should be embedded in the pdf.
 
-todo check word limit
-
-
-## Lab Index
-- 1: ip addresses, traceroute / tracert, latency bandwidth propagation delay
-- 2: gns3 config
-- 3: http, telnet, python, wireshark, fortune server, mail, mutt mail client, maildir
-- 4: dns, whois, dig, dhcp, ntp
-- 5: ftp, telnet, python, wireshark, netcat, bob.jpg
-- 6: cowsay protocol cwsp, cowsay server, telnet, python, wireshark, tcp, adding latency
-- 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
-- 8: routing, tun device, wireshark, ip route, netcat, router config
-- 9: broadcast, direct and local, multicast, rip routing, quagga, router config
-- 10: icmp, mac addresses, crc checksums, arp routing, ethernet, cat5 rj45 cables, electronics and waves
-
 
 ## Question 1
 
@@ -114,6 +99,8 @@ Answer: 10.128.17.12
 ```
 tracert 137.229.113.44
 ```
+
+Summary: crosses at 163.253.1.120, can tell cause ping, and providers
 
 I estimate the packet crosses to america when it reaches `internet2-gw.mx1.lon.uk.geant.net (62.40.124.45)`. My reasoning is that at this point the round trip time spikes from 11ms to 95ms. This must be because of the physical distance. Also, every prior hop is on JANET.
 
@@ -242,7 +229,7 @@ port used: 20313
 ### Answer
 - Client ports: control 53000, data 53005
 - Server ports: control 21, data 20313
-- pasv mode is more commonly used because it allwos the server to assign a port then you can use the full range of operations
+- pasv mode is more commonly used because it allows the server to assign a port then you can use the full range of operations
 
 ### Screenshots
 ![](question10/Screenshot 2023-12-14 130736.png)
@@ -254,6 +241,8 @@ port used: 20313
 ![](question10/Screenshot 2023-12-14 130937.png)
 
 ## Question 11
+
+Summary: not encrypted, see username and password, compare hex dump to packet data
 
 Bob transfer: neither username nor password nor data are encrypted. You can see the credentials sent in plaintext clearly highlighted in the screenshot. You can also see in the wikipedia screenshot that ftp is unencrypted.
 
@@ -307,6 +296,11 @@ The server knows this is a new connection because the initial absolute sequence 
 
 
 ## Question 14
+
+Summary:
+- udp, `length` header field
+- tcp, `Data offset`, `MSS`, IP Header `Total length`
+
 In an UDP packet, the size of the data can be determined solely from the value of the "length" section header. Subtract the size of the header, which is always 8 bytes, to get the size of the data.
 
 Conversely, in TCP the size of the header itself is stored in the header. To get the size of the data, you need to subtract the size of the header from the total size of the TCP segment. This can't be found from the header of a sole random TCP packet, you have to get it from either the packet length in the IP header, from which you also need to subtract the size of the IP header, or from the Maximum Segment Size sent during link negotation, assuming conformance with the MSS.
@@ -322,6 +316,9 @@ The PSH flag is set whenever the client has finished transmitting data and is wa
 
 
 ## Question 15
+
+Summary: Sum of header and data must be zero, can't be caues of data offset field, then it's bitwise NOT
+
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
 
 The value prior to the final step is calculated by the sum of all the other values in the header and data, as represented by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero. This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
@@ -493,6 +490,9 @@ todo why it same both
 
 
 ## Question 19
+
+### Notes
+
 - /etc/quagga/{ripd,zebra}.conf need to be ready
 - wireshark u1 all, rip
 - service zebra restart
@@ -503,6 +503,8 @@ todo why it same both
 	- password: admin
 
 note: starting before it's ready will break the u1 connection, need restart in gns
+
+### Answer
 
 Broadcast address: 172.16.100.7
 Routes added: can't see any. actually some are gone.
@@ -532,3 +534,18 @@ todo final screenshot
 
 ### Screenshots
 ![](question20/Screenshot 2023-12-17 003101.png)
+
+
+## Appendix
+
+### Lab Index
+- 1: ip addresses, traceroute / tracert, latency bandwidth propagation delay
+- 2: gns3 config
+- 3: http, telnet, python, wireshark, fortune server, mail, mutt mail client, maildir
+- 4: dns, whois, dig, dhcp, ntp
+- 5: ftp, telnet, python, wireshark, netcat, bob.jpg
+- 6: cowsay protocol cwsp, cowsay server, telnet, python, wireshark, tcp, adding latency
+- 7: cowsay server, cowsaybigtest, tcp mss maximum segment size, wireshark
+- 8: routing, tun device, wireshark, ip route, netcat, router config
+- 9: broadcast, direct and local, multicast, rip routing, quagga, router config
+- 10: icmp, mac addresses, crc checksums, arp routing, ethernet, cat5 rj45 cables, electronics and waves
