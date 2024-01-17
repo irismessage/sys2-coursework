@@ -285,10 +285,18 @@ finally remove the latency from u2
 `sudo tc qdisc del dev eth1 root`
 
 ### Answer
-The RTO varies by doubling each time, starting at the standard one second (1s), then waiting 2s, then 4s. Finally the connection succeeds. In this case the client does not give up, and I successfully ran helo, text, and quit, albeit with the excpected delay. I then disconnected manually.
+The RTO varies by doubling each time, starting at the standard one second (1s), then waiting 2s, then 4s, then 8s.
 
-However I had some inconsistent behaivour, in one case I got some ICMP destination unreachable packets, in another the connection retried unsu
-ccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
+```
+1 - 0 = 1
+3 - 1 = 2
+7.2 - 3 ≈ 4
+15.4 - 7.2 ≈ 8
+```
+
+Finally the connection succeeds. In this case the client does not give up, and I successfully ran helo, text, and quit, albeit with the excpected delay. I then disconnected manually.
+
+However I had some inconsistent behaivour, in one case I got some ICMP destination unreachable packets, in another the connection retried unsuccessfuly ad infinitum, although the same thing continued after I removed the delay until I restarted the cowsay server. So it was probably due to the specific order I did things in.
 
 ### Screenshots
 ![](question12/Screenshot 2023-12-16 163618.png)
@@ -316,15 +324,14 @@ The PSH flag is set whenever the client has finished transmitting data and is wa
 ## Question 15
 The final step in the checksum algorithm is the bitwise NOT / one's-complement. Therefore, for a final result of 0xFFFF (1111111111111111), the value prior to the final step must be 0x0000.
 
-The value prior to the final step is calculated by the sum of all the other values in the header and data, as represent by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero. This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
+The value prior to the final step is calculated by the sum of all the other values in the header and data, as represented by 16-bit one's-complement binary. For the result of a one's-complement sum to be exactly zero (0x0000), the inputs must all be zero. This is not possible for a valid TCP packet since the data offset (tcp header size) must be between 5 and 15.
 
 Therefore, a correctly generated checksum of a valid TCP packet will never have a checksum of 0xFFFF.
 
 
 ## Question 16
 
-Note the question is slightly unclear, this also requires setting BUF_SIZE in udpRX.py to 9000.
-
+### Notes
 - wireguard windows loopback, udp.port == 8080
 - won't capture this for some reason?
 - solution: replace winpcap with npcap
@@ -332,12 +339,19 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 - ok nvm it wants me to demonstrate ip segmentation by sending it across a link
 - on u1: `nc -u -l -k -p 8083 | pv | nc -u 192.168.100.254 8083`
 
+### Answer
 Three (3) UDP data packets are used in the transfer. If you count the packets for file name and number of segments, that's five.
 
 The fragment off set field is measured in 8-bit bytes. You can see this because the final fragment offset shown in wireshark of 8880 matches the BUF_SIZE of 9000, which is measured in bytes.
 
+Note the question is slightly unclear, this also requires setting BUF_SIZE in udpRX.py to 9000.
+
 ### Screenshots
+![](question16/Screenshot 2023-12-16 215915.png)
+
 ![](question16/Screenshot 2023-12-16 215924.png)
+
+![](question16/Screenshot 2023-12-16 220002.png)
 
 ![](question16/Screenshot 2023-12-16 220017.png)
 
@@ -345,9 +359,7 @@ The fragment off set field is measured in 8-bit bytes. You can see this because 
 
 ![](question16/Screenshot 2023-12-16 220338.png)
 
-![](question16/Screenshot 2023-12-16 215915.png)
-
-![](question16/Screenshot 2023-12-16 220002.png)
+todo finish checking from here
 
 
 ## Question 17
@@ -396,17 +408,17 @@ ping -c 3 10.100.3.2
 to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
 
 ### Screenshots
-![](question17/Screenshot 2023-12-16 231112.png)
+![](question17/Screenshot 2023-12-16 220749.png)
 
-![](question17/Screenshot 2023-12-16 231155.png)
+![](question17/Screenshot 2023-12-16 231112.png)
 
 ![](question17/Screenshot 2023-12-16 231123.png)
 
-![](question17/Screenshot 2023-12-16 231207.png)
-
 ![](question17/Screenshot 2023-12-16 231142.png)
 
-![](question17/Screenshot 2023-12-16 220749.png)
+![](question17/Screenshot 2023-12-16 231155.png)
+
+![](question17/Screenshot 2023-12-16 231207.png)
 
 
 ## Question 18
@@ -494,11 +506,11 @@ Routes added: can't see any. actually some are gone.
 todo check this again
 
 ### Screenshots
-![](question19/Screenshot 2023-12-17 001603.png)
-
 ![](question19/Screenshot 2023-12-16 234909.png)
 
 ![](question19/Screenshot 2023-12-17 001552.png)
+
+![](question19/Screenshot 2023-12-17 001603.png)
 
 
 ## Question 20
