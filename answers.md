@@ -359,11 +359,11 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 
 ![](question16/Screenshot 2023-12-16 220338.png)
 
-todo finish checking from here
-
 
 ## Question 17
 From the PC, pinging these IP addresses gets routed no-where. It's unclear whether you also want me to try from inside Ubuntu?
+
+todo check this ^
 
 on u1, to u2:
 ```sh
@@ -442,6 +442,10 @@ Calculating direct broadcast address for u2 eth1
 >>> addr = "".join(b)
 >>> addr
 '10101100000100000110010000001001'
+```
+- mask in decimal dot:
+```
+255.255.255.252
 ```
 - mask in binary:
 ```python
