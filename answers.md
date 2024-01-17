@@ -45,6 +45,7 @@ ping 192.168.2.12
 ```
 
 todo screenshot FROM other devices
+
 ### Screenshots
 ![](question01/Screenshot 2023-10-05 124553.png)
 
