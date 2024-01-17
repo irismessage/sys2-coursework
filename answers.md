@@ -2,7 +2,7 @@
 
 The markdown copy `answers.md` is the source and the pdf copy `answers.pdf` is converted with pandoc.
 
-For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question1/ for Question 1. Screenshots should be embedded in the pdf.
+For associated files i.e. screenshots, fortune.py, see the corresponding directories e.g. question01/ for Question 1. Screenshots should be embedded in the pdf.
 
 
 ## Question 1
@@ -13,17 +13,17 @@ jm3017
 
 sum 11
 
-### PC1
+config PC1
 ```
 ip 192.168.1.11/24 192.168.1.1
 ```
 
-### PC2
+config PC2
 ```
 ip 192.168.2.12/24 192.168.2.1
 ```
 
-### R1
+config R1
 ```
 configure terminal
 interface f0/0
@@ -39,18 +39,28 @@ network 0.0.0.0 255.255.255.255 area 0
 end
 ```
 
-### PC1
+ping from PC1
 ```
+ping 192.168.1.1
+ping 192.168.2.1
 ping 192.168.2.12
 ```
 
-todo screenshot FROM other devices
+ping from PC2
+```
+ping 192.168.2.1
+ping 192.168.1.1
+ping 192.168.1.11
+```
+
+no terminal on R1
 
 ### Screenshots
 ![](question01/Screenshot 2023-10-05 124553.png)
 
-![](question01/Screenshot 2023-10-05 124649.png)
+![](question01/Screenshot 2024-01-17 151905.png)
 
+![](question01/Screenshot 2024-01-17 151926.png)
 
 ## Question 2
 
