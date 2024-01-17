@@ -483,9 +483,9 @@ Calculating direct broadcast address for u2 eth1
 
 disable broadcast ignore for all
 ```sh
- ssh u1 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
- ssh u2 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
- ssh u3 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+ssh u1 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+ssh u2 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
+ssh u3 sysctl net.ipv4.icmp_echo_ignore_broadcasts=0
 ```
 
 finally ping
@@ -538,10 +538,6 @@ To generate destination unreachable:
 
 To generate port unreachable:
 `echo test | nc -u -u 127.0.0.1 8083`
-
-why does gns3 vm go down at random right now when I'm trying to take the final screenshot
-
-todo final screenshot
 
 ### Screenshots
 ![](question20/Screenshot 2023-12-17 003101.png)
