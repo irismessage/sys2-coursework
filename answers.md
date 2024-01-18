@@ -146,6 +146,8 @@ telnetlib fortune
 no notes, see question05/fortune.py
 
 ### Screenshots
+![](question05/Screenshot 2024-01-18 111622.png)
+
 ![](question05/Screenshot 2023-12-14 123533.png)
 
 
