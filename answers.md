@@ -381,9 +381,11 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 
 
 ## Question 17
-From the PC, pinging these IP addresses gets routed no-where. It's unclear whether you also want me to try from inside Ubuntu?
+From the PC, pinging these IP addresses gets routed no-where.
 
-todo check this ^
+From Ubuntu1, the packets get routed to loopback because these are both its ip addresses.
+
+From Ubuntu2 or Ubuntu3, ping 172.16.100.5 is routed to MikroTikCHR at 172.16.100.10, then to Ubuntu1 at destination. ping 10.100.1.1 is routed again to Mikrotik as default, then returned as a failure because it's Ubuntu1's loopback address, not a public address.
 
 on u1, to u2:
 ```sh
@@ -429,6 +431,10 @@ to reset these, restart devices in gns3 or e.g. `ip route del 10.100.3.0/24`
 
 ### Screenshots
 ![](question17/Screenshot 2023-12-16 220749.png)
+
+![](question17/Screenshot 2024-01-18 102609.png)
+
+![](question17/Screenshot 2024-01-18 102646.png)
 
 ![](question17/Screenshot 2023-12-16 231112.png)
 
