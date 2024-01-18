@@ -521,10 +521,12 @@ ping -b 172.16.100.11
 ping -b 255.255.255.255
 ```
 
-todo why it same both
+Both pings only get responses from localhost at 172.16.100.9. The result is the same because they're both routed to eth1, and MikroTikCHR isn't responding to broadcasts, nor is it a switch.
 
 ### Screenshots
 ![](question18/Screenshot 2023-12-16 234050.png)
+
+![](question18/Screenshot 2024-01-18 104436.png)
 
 
 ## Question 19
