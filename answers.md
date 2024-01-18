@@ -381,6 +381,15 @@ Note the question is slightly unclear, this also requires setting BUF_SIZE in ud
 
 
 ## Question 17
+
+Part 1 summary:
+- PC -> 10.100.1.1 -> X
+- PC -> 172.16.100.5 -> X
+- U1 -> 10.100.1.1 -> U1
+- U1 -> 172.16.100.5 -> U1
+- U2 -> 10.100.1.1 -> X
+- U2 -> 172.16.100.5 -> U1
+
 From the PC, pinging these IP addresses gets routed no-where.
 
 From Ubuntu1, the packets get routed to loopback because these are both its ip addresses.
