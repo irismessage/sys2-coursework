@@ -547,16 +547,13 @@ note: starting before it's ready will break the u1 connection, need restart in g
 ### Answer
 
 Broadcast address: 172.16.100.7
-Routes added: can't see any. actually some are gone.
 
-todo check this again
+Routes added are `172.16.100.8/30 via 172.16.100.6 dev eth1` and `172.16.100.12/30 via 172.16.100.6 dev eth1`. The reason they're added is to route to Ubuntu2 and Ubuntu3. For both routes, 172.16.100.6 dev eth1 goes to MikroTikCHR. The CIDR mask 30 has removed the 1 and 2 bits. `172.16.100.8/30` routes to Ubuntu2 at `172.16.100.9` (+1). `172.16.100.12/30` routes to Ubuntu3 at `172.16.100.13` (+1).
 
 ### Screenshots
-![](question19/Screenshot 2023-12-16 234909.png)
-
 ![](question19/Screenshot 2023-12-17 001552.png)
 
-![](question19/Screenshot 2023-12-17 001603.png)
+![](question19/Screenshot 2024-01-18 110101.png)
 
 
 ## Question 20
