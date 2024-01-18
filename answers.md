@@ -211,7 +211,17 @@ They differ because they are both constantly decreasing to 0 before being reset,
 ## Question 9
 dhcp release and request capture
 
-no notes, see screenshots in question09/
+u1 `service isc-dhcp-server status`
+
+wireshark u2, eth0, filter `bootp`
+
+u2
+```
+# release
+dhclient -r -v
+# request
+dhclient -v
+```
 
 todo should be more than one screenshot?
 
