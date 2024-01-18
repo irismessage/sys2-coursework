@@ -223,10 +223,12 @@ dhclient -r -v
 dhclient -v
 ```
 
-todo should be more than one screenshot?
-
 ### Screenshots
 ![](question09/Screenshot 2023-12-14 123225.png)
+
+![](question09/Screenshot 2024-01-18 101144.png)
+
+![](question09/Screenshot 2024-01-18 101204.png)
 
 
 ## Question 10
